@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRONCORE AI FITNESS - Onboarding</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <img src="fc3e0536-1de4-4543-b075-4550e2bc6e44.jpg" alt="IronCore Logo" class="logo">
+        </header>
+
+        <main id="step-1" class="step active">
+            <h1>Bienvenido a <span>IRONCORE</span></h1>
+            <p>El ecosistema fitness impulsado por Inteligencia Artificial.</p>
+            <button class="btn-primary" onclick="nextStep(2)">Comenzar mi transformación</button>
+        </main>
+
+        <main id="step-2" class="step">
+            <h2>Paso 1: Tu Biología</h2>
+            <p>Selecciona tu sexo biológico para calcular tu Tasa Metabólica Basal (TMB) con precisión.</p>
+            <div class="options">
+                <div class="card" onclick="selectGender('M')">Hombre</div>
+                <div class="card" onclick="selectGender('F')">Mujer</div>
+            </div>
+            <button class="btn-secondary" onclick="nextStep(1)">Atrás</button>
+        </main>
+
+        <main id="step-3" class="step">
+            <h2>Paso 2: Tus Métricas</h2>
+            <div class="input-group">
+                <label>Edad (años)</label>
+                <input type="number" id="age" placeholder="Ej: 28">
+            </div>
+            <div class="input-group">
+                <label>Peso (kg)</label>
+                <input type="number" id="weight" placeholder="Ej: 75">
+            </div>
+            <div class="input-group">
+                <label>Estatura (cm)</label>
+                <input type="number" id="height" placeholder="Ej: 175">
+            </div>
+            <button class="btn-primary" onclick="calculateMetabolism()">Calcular TMB y Continuar</button>
+            <button class="btn-secondary" onclick="nextStep(2)">Atrás</button>
+        </main>
+
+        <main id="step-4" class="step">
+            <h2>¡Perfil Creado!</h2>
+            <div class="result-card">
+                <h3>Tu Tasa Metabólica Basal</h3>
+                <div class="highlight" id="bmr-result">0 kcal</div>
+                <p>Estas son las calorías que tu cuerpo quema en reposo. IRONCORE AI usará esto para crear tu dieta automatizada.</p>
+            </div>
+            <button class="btn-primary" onclick="alert('¡MVP Completado! En la fase 2, esto llevará al Dashboard Principal.')">Ir a mi Plan de Entrenamiento</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
